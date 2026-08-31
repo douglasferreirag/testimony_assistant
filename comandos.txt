@@ -1,0 +1,2 @@
+executar a aplicação: python manage.py runserver
+
