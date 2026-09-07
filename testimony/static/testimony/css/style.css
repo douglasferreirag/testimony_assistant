@@ -1,5 +1,8 @@
 body {
     background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ocupa toda a altura da tela */
 }
 
 header {
@@ -9,12 +12,15 @@ header {
     text-align: center;
 }
 
+main {
+    flex: 1; /* ocupa o espaço disponível */
+    overflow-y: auto; /* ativa rolagem se precisar */
+    padding-bottom: 2rem; /* espaço extra antes do footer */
+}
+
 footer {
     background-color: #343a40;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
 }

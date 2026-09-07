@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from testimony.views import homepage
+from testimony.views import homepage, registry_of_letters, registry_of_letters_deliveries, registry_of_territories
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name='homepage'),
+    path('carta/registry/', registry_of_letters, name='registry_of_letters'),
+    path('territorio/registry/', registry_of_territories, name='registry_of_territories'),
+    path('entrega/registry/', registry_of_letters_deliveries, name='registry_of_letters_deliveries'),
 ]
