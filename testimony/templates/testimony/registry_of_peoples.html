@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Pessoa</title>
+    <!-- Bootstrap CSS local -->
+    <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'testimony/css/registry_of_people.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Testimony Assistant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registry_of_people' %}">Cadastrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Limpar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Página Inicial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal com grid -->
+    <main class="container mt-5">
+        <h2 class="mb-4">Cadastro de Pessoa</h2>
+        
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da pessoa">
+                </div>
+                <div class="col-md-6">
+                    <label for="contato" class="form-label">Contato</label>
+                    <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite telefone ou e-mail">
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center p-2">
+        <p>&copy; 2026 Testimony Assistant</p>
+    </footer>
+
+    <!-- Bootstrap JS local -->
+    <script src="{% static 'testimony/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
