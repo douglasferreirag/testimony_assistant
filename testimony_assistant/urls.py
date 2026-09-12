@@ -9,11 +9,12 @@ from django.urls import path
 
 from testimony.views import (
     homepage,
+    list_of_peoples,
     registry_of_letters,
     registry_of_letters_deliveries,
-    registry_of_peoples,
     registry_of_territories,
-    registry_of_peoples,   # nova view para pessoas
+    registry_of_peoples,
+    list_of_peoples,   # nova view para listagem de pessoas
 )
 
 urlpatterns = [
@@ -22,5 +23,6 @@ urlpatterns = [
     path('carta/registry/', registry_of_letters, name='registry_of_letters'),
     path('territorio/registry/', registry_of_territories, name='registry_of_territories'),
     path('entrega/registry/', registry_of_letters_deliveries, name='registry_of_letters_deliveries'),
-    path('pessoa/registry/', registry_of_peoples, name='registry_of_peoples'),  # nova rota
+    path('pessoa/registry/', registry_of_peoples, name='registry_of_peoples'),   # rota cadastro
+    path('pessoa/list/', list_of_peoples, name='list_of_peoples'),                      # rota listagem
 ]
