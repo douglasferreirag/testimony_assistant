@@ -3,11 +3,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Carta</title>
+    <title>Listagem de Cartas</title>
     <!-- Bootstrap CSS local -->
     <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
-    
 </head>
 <body>
     <!-- Navbar -->
@@ -24,10 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registry_of_letters' %}">Cadastrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Limpar</a>
+                        <a class="nav-link active" href="{% url 'list_of_letters' %}">Exibir</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/">Página Inicial</a>
@@ -37,29 +33,35 @@
         </div>
     </nav>
 
-    <!-- Conteúdo principal com grid -->
+    <!-- Conteúdo principal -->
     <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Carta</h2>
-        
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="id" class="form-label">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID">
-                </div>
-                <div class="col-md-6">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição">
-                </div>
-            </div>
+        <h2 class="mb-4">Listagem de Cartas</h2>
 
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="base" class="form-label">Base</label>
-                    <input type="text" class="form-control" id="base" name="base" placeholder="Digite a base">
-                </div>
-            </div>
-        </form>
+        <!-- Tabela de cartas -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Base</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for carta in cartas %}
+                    <tr>
+                        <td>{{ carta.id_carta }}</td>
+                        <td>{{ carta.descricao }}</td>
+                        <td>{{ carta.base }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center">Nenhuma carta cadastrada.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <!-- Rodapé -->
