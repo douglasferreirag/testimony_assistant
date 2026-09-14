@@ -39,22 +39,21 @@
 
     <!-- Conteúdo principal com grid -->
     <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Entrega</h2>
+        <h2 class="mb-4">Cadastro de Entrega de Cartas</h2>
         
         <form>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="id_carta" class="form-label">Carta</label>
-                    <select class="form-select" id="id_carta" name="id_carta">
+                    <select class="form-select" id="id_carta" name="id_carta" required>
                         <option selected disabled>Selecione a carta</option>
                         <!-- opções dinâmicas depois -->
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label for="id_territorio" class="form-label">Território</label>
-                    <select class="form-select" id="id_territorio" name="id_territorio">
+                    <select class="form-select" id="id_territorio" name="id_territorio" required>
                         <option selected disabled>Selecione o território</option>
-        
                         <!-- opções dinâmicas depois -->
                     </select>
                 </div>
@@ -63,11 +62,11 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="local" class="form-label">Local</label>
-                    <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local da entrega">
+                    <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local da entrega" required>
                 </div>
                 <div class="col-md-6">
                     <label for="data_entrega" class="form-label">Data da Entrega</label>
-                    <input type="date" class="form-control" id="data_entrega" name="data_entrega">
+                    <input type="date" class="form-control" id="data_entrega" name="data_entrega" required>
                 </div>
             </div>
         </form>

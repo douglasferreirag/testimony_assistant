@@ -3,11 +3,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Território</title>
+    <title>Cadastro de Conversa</title>
     <!-- Bootstrap CSS local -->
     <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'testimony/css/registry_of_territories.css' %}">
+    <link rel="stylesheet" href="{% static 'testimony/css/registry_of_conversations.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registry_of_territories' %}">Cadastrar</a>
+                        <a class="nav-link" href="{% url 'registry_of_conversations' %}">Cadastrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Limpar</a>
@@ -37,37 +37,32 @@
         </div>
     </nav>
 
-    <!-- Conteúdo principal com grid -->
+    <!-- Conteúdo principal -->
     <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Território</h2>
+        <h2 class="mb-4">Cadastro de Conversa</h2>
         
         <form>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="id" class="form-label">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
+                    <label for="id_pessoa" class="form-label">Id da Pessoa</label>
+                    <select class="form-select" id="id_pessoa" name="id_pessoa" required>
+                        <option selected disabled>Selecionea id da pessoa</option>
+                        <!-- opções dinâmicas depois -->
+                    </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite a cidade" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="referencia" class="form-label">Ponto de Referência</label>
-                    <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Digite o ponto de referência" required>
+                    <label for="id_territorio" class="form-label">Id do Território</label>
+                    <select class="form-select" id="id_territorio" name="id_territorio" required>
+                        <option selected disabled>Selecione a id do território</option>
+                        <!-- opções dinâmicas depois -->
+                    </select>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="estado" class="form-label">Estado</label>
-                    <input type="text" class="form-control" id="estado" name="estado" placeholder="Digite o estado" required>
+                    <label for="data_conversa" class="form-label">Data da Conversa</label>
+                    <input type="date" class="form-control" id="data_conversa" name="data_conversa" required>
                 </div>
             </div>
         </form>

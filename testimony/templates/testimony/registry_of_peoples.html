@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registry_of_people' %}">Cadastrar</a>
+                        <a class="nav-link" href="{% url 'registry_of_peoples' %}">Cadastrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Limpar</a>
@@ -45,11 +45,11 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da pessoa">
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da pessoa" required>
                 </div>
                 <div class="col-md-6">
                     <label for="contato" class="form-label">Contato</label>
-                    <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite telefone ou e-mail">
+                    <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite telefone ou e-mail" required>
                 </div>
             </div>
         </form>

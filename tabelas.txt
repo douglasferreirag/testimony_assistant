@@ -1,0 +1,37 @@
+Cartas:
+
+    id
+    base
+    descrição
+
+
+Territórios:
+
+    id
+    descrição
+    cidade
+    ponto de referência
+    estado
+
+Entrega de Cartas
+
+    id
+    id da Cartas
+    id do Territórios
+    data da Entrega
+    local
+
+Pessoas
+
+    id
+    nome
+    contato
+
+Conversas - montar
+
+    id
+    id da Pessoas
+    id do territorio
+    data da Conversa
+
+
