@@ -14,16 +14,26 @@ from testimony.views import (
     registry_of_territories,
     registry_of_peoples,
     list_of_peoples,
-    list_of_letters,   # nova view para listagem de cartas
+    list_of_letters,
+    list_of_territories,   # nova view para listagem de territórios
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name='homepage'),
+
+    # Cartas
     path('carta/registry/', registry_of_letters, name='registry_of_letters'),
-    path('carta/list/', list_of_letters, name='list_of_letters'),              # rota listagem de cartas
+    path('carta/list/', list_of_letters, name='list_of_letters'),
+
+    # Territórios
     path('territorio/registry/', registry_of_territories, name='registry_of_territories'),
+    path('territorio/list/', list_of_territories, name='list_of_territories'),
+
+    # Entregas
     path('entrega/registry/', registry_of_letters_deliveries, name='registry_of_letters_deliveries'),
-    path('pessoa/registry/', registry_of_peoples, name='registry_of_peoples'), # rota cadastro pessoas
-    path('pessoa/list/', list_of_peoples, name='list_of_peoples'),             # rota listagem pessoas
+
+    # Pessoas
+    path('pessoa/registry/', registry_of_peoples, name='registry_of_peoples'),
+    path('pessoa/list/', list_of_peoples, name='list_of_peoples'),
 ]
