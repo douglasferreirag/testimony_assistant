@@ -18,7 +18,8 @@ from testimony.views import (
     list_of_territories,
     list_of_letters_deliveries,
     registry_of_conversations,
-    list_of_conversations,   # nova view para listagem de conversas
+    list_of_conversations,
+    registry_of_publications,   # nova view para cadastro de publicações
 )
 
 urlpatterns = [
@@ -44,4 +45,7 @@ urlpatterns = [
     # Conversas
     path('conversa/registry/', registry_of_conversations, name='registry_of_conversations'),
     path('conversa/list/', list_of_conversations, name='list_of_conversations'),
+
+    # Publicações
+    path('publicacao/registry/', registry_of_publications, name='registry_of_publications'),
 ]

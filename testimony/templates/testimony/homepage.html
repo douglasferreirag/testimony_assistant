@@ -84,6 +84,18 @@
                             <li><a class="dropdown-item" href="{% url 'list_of_conversations' %}">Listar</a></li>
                         </ul>
                     </li>
+
+                    <!-- Dropdown Publicações -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="publicacoesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Publicações
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="publicacoesDropdown">
+                            <li><a class="dropdown-item" href="{% url 'registry_of_publications' %}">Cadastrar</a></li>
+                           
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

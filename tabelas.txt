@@ -1,37 +1,41 @@
 Cartas:
 
-    id
+    id (varchar (255))
     base
     descrição
 
 
 Territórios:
 
-    id
-    descrição
-    cidade
-    ponto de referência
-    estado
+    id (int ou bigint)
+    descrição (varchar (255))
+    cidade (varchar (255))
+    ponto de referência (varchar (255))
+    estado (varchar (255))
 
 Entrega de Cartas
 
-    id
-    id da Cartas
-    id do Territórios
-    data da Entrega
-    local
+    id (int ou bigint)
+    id da Cartas (varchar (255))
+    id do Territórios (int ou bigint)
+    data da Entrega (date)
+    local (varchar (255))
 
 Pessoas
 
-    id
-    nome
-    contato
+    id (int ou bigint)
+    nome (varchar (255))
+    contato (varchar (255))
 
-Conversas - montar
+Conversas 
 
-    id
-    id da Pessoas
-    id do territorio
-    data da Conversa
+    id (int ou bigint)
+    id da Pessoas (int ou bigint)
+    id do territorio (int ou bigint)
+    data da Conversa date
 
+Publicação  
+
+id varchar (255)
+descricao (varchar (255))
 
