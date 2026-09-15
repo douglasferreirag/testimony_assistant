@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # futuramente você pode importar os models
-# from .models import Carta, Territorio, Pessoa, Entrega, Conversa, Publicacao
+# from .models import Carta, Territorio, Pessoa, Entrega, Conversa, Publicacao, Video
 
 def homepage(request):
     return render(request, 'testimony/homepage.html')
@@ -37,3 +37,6 @@ def list_of_conversations(request):
 
 def registry_of_publications(request):
     return render(request, 'testimony/registry_of_publications.html')
+
+def registry_of_videos(request):
+    return render(request, 'testimony/registry_of_videos.html')
