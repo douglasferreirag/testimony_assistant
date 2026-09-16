@@ -29,13 +29,30 @@ Pessoas
 
 Conversas 
 
-    id (int ou bigint)
+    id (int ou bigint) required
     id da Pessoas (int ou bigint)
     id do territorio (int ou bigint)
     data da Conversa date
 
-Publicação  
+Revista
 
-id varchar (255)
-descricao (varchar (255))
+    id (varchar 255 ) required
+    descricacao (varchar 255 ) required
+    ano int
+
+  Livro
+
+    id (varchar 255 ) required
+    descricacao (varchar 255 ) required
+    ano int  
+    Quantidade de capítulos int
+
+   Folhetos
+
+    id
+    descricao
+    ano
+    tamanho
+
+
 

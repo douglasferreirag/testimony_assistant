@@ -52,3 +52,6 @@ def list_of_videos(request):
 # Livros
 def registry_of_books(request):
     return render(request, 'testimony/registry_of_books.html')
+
+def list_of_books(request):
+    return render(request, 'testimony/list_of_books.html')
