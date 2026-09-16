@@ -25,6 +25,8 @@ from testimony.views import (
     list_of_videos,             # view para listagem de vídeos
     registry_of_books,          # view para cadastro de livros
     list_of_books,              # view para listagem de livros
+    registry_of_leaflets,       # view para cadastro de folhetos
+    list_of_leaflets,           # view para listagem de folhetos
 )
 
 urlpatterns = [
@@ -62,4 +64,8 @@ urlpatterns = [
     # Vídeos
     path('video/registry/', registry_of_videos, name='registry_of_videos'),
     path('video/list/', list_of_videos, name='list_of_videos'),
+
+    # Folhetos (Leaflets)
+    path('leaflet/registry/', registry_of_leaflets, name='registry_of_leaflets'),
+    path('leaflet/list/', list_of_leaflets, name='list_of_leaflets'),
 ]

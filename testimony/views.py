@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # futuramente você pode importar os models
-# from .models import Carta, Territorio, Pessoa, Entrega, Conversa, Revista, Video, Livro
+# from .models import Carta, Territorio, Pessoa, Entrega, Conversa, Revista, Video, Livro, Leaflet
 
 def homepage(request):
     return render(request, 'testimony/homepage.html')
@@ -55,3 +55,10 @@ def registry_of_books(request):
 
 def list_of_books(request):
     return render(request, 'testimony/list_of_books.html')
+
+# Folhetos (Leaflets)
+def registry_of_leaflets(request):
+    return render(request, 'testimony/registry_of_leaflets.html')
+
+def list_of_leaflets(request):
+    return render(request, 'testimony/list_of_leaflets.html')

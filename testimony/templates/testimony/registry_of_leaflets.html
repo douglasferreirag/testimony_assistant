@@ -3,11 +3,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Revista</title>
+    <title>Cadastrar Folheto</title>
     <!-- Bootstrap CSS local -->
     <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'testimony/css/registry_of_magazines.css' %}">
+    <link rel="stylesheet" href="{% static 'testimony/css/registry_of_leaflets.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registry_of_magazines' %}">Cadastrar</a>
+                        <a class="nav-link" href="{% url 'registry_of_leaflets' %}">Cadastrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Limpar</a>
@@ -39,26 +39,41 @@
 
     <!-- Conteúdo principal -->
     <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Revista</h2>
+        <h2 class="mb-4">Cadastro de Folheto</h2>
         
         <form method="post">
             {% csrf_token %}
             <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="publication_id" class="form-label">ID </label>
-                    <input type="text" class="form-control" id=id" name="id" placeholder="Digite o ID" required>
+                <div class="col-md-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="descricao" class="form-label">Descrição</label>
                     <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="ano" class="form-label">Ano</label>
                     <input type="number" class="form-control" id="ano" name="ano" min="1900" max="2100" required>
                 </div>
+                <div class="col-md-3">
+                    <label for="tamanho" class="form-label">Tamanho</label>
+                    <select class="form-select" id="tamanho" name="tamanho" required>
+                        <option value="" selected disabled>Selecione o tamanho</option>
+                        <option value="Grande">Grande</option>
+                        <option value="Pequeno">Pequeno</option>
+                    </select>
+                </div>
             </div>
 
-            
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="base" class="form-label">Base</label>
+                    <input type="text" class="form-control" id="base" name="base" placeholder="Digite a base" required>
+                </div>
+            </div>
+
+          
         </form>
     </main>
 
