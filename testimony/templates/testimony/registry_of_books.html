@@ -3,11 +3,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Vídeo</title>
-    <!-- Bootstrap CSS local -->
+    <title>Cadastrar Livro</title>
     <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'testimony/css/registry_of_videos.css' %}">
+    <link rel="stylesheet" href="{% static 'testimony/css/registry_of_books.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -24,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registry_of_videos' %}">Cadastrar</a>
+                        <a class="nav-link" href="{% url 'registry_of_books' %}">Cadastrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Limpar</a>
@@ -39,26 +38,26 @@
 
     <!-- Conteúdo principal -->
     <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Vídeo</h2>
+        <h2 class="mb-4">Cadastro de Livro</h2>
         
         <form method="post">
             {% csrf_token %}
             <div class="row mb-3">
                 <div class="col-md-4">
-                    <label for="id" class="form-label">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
+                    <label for="publication_id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id=id" name="id" placeholder="Digite o ID" required>
                 </div>
                 <div class="col-md-4">
                     <label for="descricao" class="form-label">Descrição</label>
                     <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
                 </div>
                 <div class="col-md-4">
-                    <label for="tempo" class="form-label">Tempo (hh:mm:ss)</label>
-                    <input type="time" class="form-control" id="tempo" name="tempo" step="1" value="00:00:00" required>
+                    <label for="ano" class="form-label">Ano</label>
+                    <input type="number" class="form-control" id="ano" name="ano" min="1900" max="2100" required>
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            
         </form>
     </main>
 
@@ -67,7 +66,6 @@
         <p>&copy; 2026 Testimony Assistant</p>
     </footer>
 
-    <!-- Bootstrap JS local -->
     <script src="{% static 'testimony/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

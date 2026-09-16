@@ -19,8 +19,9 @@ from testimony.views import (
     list_of_letters_deliveries,
     registry_of_conversations,
     list_of_conversations,
-    registry_of_publications,   # view para cadastro de publicações
-    registry_of_videos,         # nova view para cadastro de vídeos
+    registry_of_magazines,      # view para cadastro de revistas
+    registry_of_videos,         # view para cadastro de vídeos
+    registry_of_books,          # view para cadastro de livros
 )
 
 urlpatterns = [
@@ -47,8 +48,11 @@ urlpatterns = [
     path('conversa/registry/', registry_of_conversations, name='registry_of_conversations'),
     path('conversa/list/', list_of_conversations, name='list_of_conversations'),
 
-    # Publicações
-    path('publicacao/registry/', registry_of_publications, name='registry_of_publications'),
+    # Revistas
+    path('revista/registry/', registry_of_magazines, name='registry_of_magazines'),
+
+    # Livros
+    path('livro/registry/', registry_of_books, name='registry_of_books'),
 
     # Vídeos
     path('video/registry/', registry_of_videos, name='registry_of_videos'),

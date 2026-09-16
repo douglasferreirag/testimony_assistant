@@ -4,116 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <title>Testimony Assistant</title>
-    <!-- Bootstrap CSS local -->
     <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
+    <style>
+        .menu-card {
+            transition: transform 0.2s ease-in-out;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar no estilo listagem -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <!-- Logo / título -->
-            <a class="navbar-brand" href="#">Testimony Assistant</a>
+    <!-- Logo -->
+    <header class="bg-dark text-white text-center py-3">
+        <h2>Testimony Assistant</h2>
+    </header>
 
-            <!-- Botão para mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Itens do menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <!-- Dropdown Cartas -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="cartasDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Cartas
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartasDropdown">
-                            <li><a class="dropdown-item" href="{% url 'registry_of_letters' %}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'list_of_letters' %}">Listar</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Dropdown Territórios -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="territorioDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Territórios
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="territorioDropdown">
-                            <li><a class="dropdown-item" href="{% url 'registry_of_territories' %}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'list_of_territories' %}">Listar</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Dropdown Entregas -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="entregaDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Entregas de Cartas
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="entregaDropdown">
-                            <li><a class="dropdown-item" href="{% url 'registry_of_letters_deliveries' %}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'list_of_letters_deliveries' %}">Listar</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Dropdown Pessoas -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pessoasDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Pessoas
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="pessoasDropdown">
-                            <li><a class="dropdown-item" href="{% url 'registry_of_peoples' %}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'list_of_peoples' %}">Listar</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Dropdown Conversas -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="conversasDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Conversas
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="conversasDropdown">
-                            <li><a class="dropdown-item" href="{% url 'registry_of_conversations' %}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'list_of_conversations' %}">Listar</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Dropdown Publicações -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="publicacoesDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Publicações
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="publicacoesDropdown">
-                            <li><a class="dropdown-item" href="{% url 'registry_of_publications' %}">Cadastrar Publicação</a></li>
-                            <li><a class="dropdown-item" href="{% url 'registry_of_videos' %}">Cadastrar Vídeo</a></li>
-                            
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Conteúdo principal -->
+    <!-- Conteúdo principal com cards -->
     <main class="container mt-5">
-        <h1>Bem-vindo ao Testimony Assistant</h1>
-        <p>Organize seu ministério de forma eficiente.</p>
+        <h1 class="mb-4">Bem-vindo ao Testimony Assistant</h1>
+        <p class="mb-5">Organize seu ministério de forma eficiente.</p>
+
+        <div class="row">
+            <!-- Card Cartas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cartas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuCartas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuCartas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_letters' %}">Cadastrar Carta</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_letters' %}">Listar Cartas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Territórios -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Territórios</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuTerritorios">Acessar</button>
+                        <div class="collapse mt-3" id="submenuTerritorios">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_territories' %}">Cadastrar Território</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_territories' %}">Listar Territórios</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Entregas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Entregas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuEntregas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuEntregas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_letters_deliveries' %}">Cadastrar Entrega</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_letters_deliveries' %}">Listar Entregas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Pessoas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pessoas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuPessoas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuPessoas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_peoples' %}">Cadastrar Pessoa</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_peoples' %}">Listar Pessoas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Conversas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Conversas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuConversas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuConversas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_conversations' %}">Cadastrar Conversa</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_conversations' %}">Listar Conversas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Revistas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Revistas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuRevistas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuRevistas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_magazines' %}">Cadastrar Revista</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Livros -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Livros</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuLivros">Acessar</button>
+                        <div class="collapse mt-3" id="submenuLivros">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_books' %}">Cadastrar Livro</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Vídeos -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vídeos</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuVideos">Acessar</button>
+                        <div class="collapse mt-3" id="submenuVideos">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_videos' %}">Cadastrar Vídeo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <!-- Rodapé -->
     <footer class="bg-dark text-white text-center p-2 mt-5">
         <p>&copy; 2026 Testimony Assistant</p>
     </footer>
 
-    <!-- Bootstrap JS local -->
     <script src="{% static 'testimony/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
