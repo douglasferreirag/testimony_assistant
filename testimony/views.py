@@ -35,15 +35,20 @@ def registry_of_conversations(request):
 def list_of_conversations(request):
     return render(request, 'testimony/list_of_conversations.html')
 
-# Agora trocamos Publicações por Revistas
+# Revistas
 def registry_of_magazines(request):
     return render(request, 'testimony/registry_of_magazines.html')
 
+def list_of_magazines(request):
+    return render(request, 'testimony/list_of_magazines.html')
+
+# Vídeos
 def registry_of_videos(request):
     return render(request, 'testimony/registry_of_videos.html')
 
 def list_of_videos(request):
     return render(request, 'testimony/list_of_videos.html')
 
+# Livros
 def registry_of_books(request):
     return render(request, 'testimony/registry_of_books.html')
