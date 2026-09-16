@@ -21,6 +21,7 @@ from testimony.views import (
     list_of_conversations,
     registry_of_magazines,      # view para cadastro de revistas
     registry_of_videos,         # view para cadastro de vídeos
+    list_of_videos,             # view para listagem de vídeos
     registry_of_books,          # view para cadastro de livros
 )
 
@@ -56,4 +57,5 @@ urlpatterns = [
 
     # Vídeos
     path('video/registry/', registry_of_videos, name='registry_of_videos'),
+    path('video/list/', list_of_videos, name='list_of_videos'),
 ]
