@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Estudos</title>
+    <!-- Bootstrap CSS local -->
+    <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'testimony/css/list_of_studies.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Testimony Assistant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'list_of_studies' %}">Exibir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Página Inicial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="container mt-5">
+        <h2 class="mb-4">Listagem de Estudos</h2>
+
+        <!-- Tabela de estudos -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>ID da Conversa</th>
+                        <th>ID da Publicação</th>
+                        <th>Onde Continuar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for estudo in estudos %}
+                    <tr>
+                        <td>{{ estudo.id }}</td>
+                        <td>{{ estudo.conversa_id }}</td>
+                        <td>{{ estudo.publicacao_id }}</td>
+                        <td>{{ estudo.ondecontinuar }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">Nenhum estudo cadastrado.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center p-2">
+        <p>&copy; 2026 Testimony Assistant</p>
+    </footer>
+
+    <!-- Bootstrap JS local -->
+    <script src="{% static 'testimony/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

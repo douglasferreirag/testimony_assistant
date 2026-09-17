@@ -54,5 +54,17 @@ Revista
     ano
     tamanho
 
+    Estudo
+
+    id bigint
+    id da Conversa bigint
+    id da publicação bigint
+    ondecontinuar varchar (255)
 
 
+  Estudo
+
+    id 
+    id da Conversa 
+    id da publicação 
+    ondecontinuar 
