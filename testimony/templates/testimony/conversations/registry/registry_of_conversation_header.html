@@ -1,5 +1,5 @@
 {% load static %}
-
+    
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -14,7 +14,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'list_of_books' %}">Exibir</a>
+                        <a class="nav-link" href="{% url 'registry_of_conversation' %}">Cadastrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Limpar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/">Página Inicial</a>
@@ -27,5 +30,4 @@
 <!-- Bootstrap CSS local -->
 <link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
-<link rel="stylesheet" href="{% static 'testimony/css/list_of_books.css' %}">
-
+<link rel="stylesheet" href="{% static 'testimony/css/registry_of_conversations.css' %}">

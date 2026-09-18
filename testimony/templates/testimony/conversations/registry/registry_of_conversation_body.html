@@ -1,0 +1,32 @@
+<!-- Conteúdo principal -->
+ {% load static %}
+ 
+<main class="container mt-5">
+        <h2 class="mb-4">Cadastro de Conversa</h2>
+        
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="id_pessoa" class="form-label">Id da Pessoa</label>
+                    <select class="form-select" id="id_pessoa" name="id_pessoa" required>
+                        <option selected disabled>Selecione a id da pessoa</option>
+                        <!-- opções dinâmicas depois -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="id_territorio" class="form-label">Id do Território</label>
+                    <select class="form-select" id="id_territorio" name="id_territorio" required>
+                        <option selected disabled>Selecione a id do território</option>
+                        <!-- opções dinâmicas depois -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="data_conversa" class="form-label">Data da Conversa</label>
+                    <input type="date" class="form-control" id="data_conversa" name="data_conversa" required>
+                </div>
+            </div>
+        </form>
+</main>

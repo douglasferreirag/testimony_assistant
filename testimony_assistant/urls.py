@@ -17,13 +17,13 @@ from testimony.views import (
     list_of_letters,
     list_of_territories,
     list_of_letters_deliveries,
-    registry_of_conversations,
+    registry_of_conversation,
     list_of_conversations,
     registry_of_magazines,      # view para cadastro de revistas
     list_of_magazines,          # view para listagem de revistas
     registry_of_videos,         # view para cadastro de vídeos
     list_of_videos,             # view para listagem de vídeos
-    registry_of_books,          # view para cadastro de livros
+    registry_of_book,          # view para cadastro de livros
     list_of_books,              # view para listagem de livros
     registry_of_leaflets,       # view para cadastro de folhetos
     list_of_leaflets,           # view para listagem de folhetos
@@ -52,7 +52,7 @@ urlpatterns = [
     path('pessoa/list/', list_of_peoples, name='list_of_peoples'),
 
     # Conversas
-    path('conversa/registry/', registry_of_conversations, name='registry_of_conversations'),
+    path('conversa/registry/', registry_of_conversation, name='registry_of_conversation'),
     path('conversa/list/', list_of_conversations, name='list_of_conversations'),
 
     # Revistas
@@ -60,7 +60,7 @@ urlpatterns = [
     path('revista/list/', list_of_magazines, name='list_of_magazines'),
 
     # Livros
-    path('livro/registry/', registry_of_books, name='registry_of_books'),
+    path('livro/registry/', registry_of_book, name='registry_of_book'),
     path('livro/list/', list_of_books, name='list_of_books'),
 
     # Vídeos

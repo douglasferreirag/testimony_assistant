@@ -39,8 +39,8 @@ def list_of_letters_deliveries(request):
 
 # Conversations
 
-def registry_of_conversations(request):
-    return render(request, 'testimony/conversations/registry_of_conversations.html')
+def registry_of_conversation(request):
+    return render(request, 'testimony/conversations/registry/registry_of_conversation.html')
 
 def list_of_conversations(request):
     return render(request, 'testimony/conversations/list_of_conversations.html')
@@ -62,8 +62,8 @@ def list_of_videos(request):
     return render(request, 'testimony/videos/list_of_videos.html')
 
 # Books
-def registry_of_books(request):
-    return render(request, 'testimony/books/registry/registry_of_books.html')
+def registry_of_book(request):
+    return render(request, 'testimony/books/registry/registry_of_book.html')
 
 def list_of_books(request):
     return render(request, 'testimony/books/list/list_of_books.html')
