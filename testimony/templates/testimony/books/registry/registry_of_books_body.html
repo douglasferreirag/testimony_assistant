@@ -1,0 +1,25 @@
+<main class="container mt-5">
+    <h2 class="mb-4">Cadastro de Livro</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="id" class="form-label">ID</label>
+                <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
+            </div>
+            <div class="col-md-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
+            </div>
+            <div class="col-md-3">
+                <label for="ano" class="form-label">Ano</label>
+                <input type="number" class="form-control" id="ano" name="ano" min="1900" max="2100" required>
+            </div>
+            <div class="col-md-3">
+                <label for="capitulos" class="form-label">Quantidade de Capítulos</label>
+                <input type="number" class="form-control" id="capitulos" name="capitulos" min="1" required>
+            </div>
+        </div>
+    </form>
+</main>
