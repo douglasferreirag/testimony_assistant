@@ -43,7 +43,7 @@ def registry_of_conversation(request):
     return render(request, 'testimony/conversations/registry/registry_of_conversation.html')
 
 def list_of_conversations(request):
-    return render(request, 'testimony/conversations/list_of_conversations.html')
+    return render(request, 'testimony/conversations/list/list_of_conversations.html')
 
 # Magazines
 

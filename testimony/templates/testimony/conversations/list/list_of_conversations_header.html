@@ -1,0 +1,31 @@
+{% load static %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Testimony Assistant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'list_of_conversations' %}">Exibir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Página Inicial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>
+
+ <!-- Bootstrap CSS local -->
+<link rel="stylesheet" href="{% static 'testimony/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'testimony/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'testimony/css/list_conversations.css' %}">
+
