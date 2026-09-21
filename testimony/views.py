@@ -7,8 +7,8 @@ def homepage(request):
 
 # Letters
 
-def registry_of_letters(request):
-    return render(request, 'testimony/letters/registry_of_letters.html')
+def registry_of_letter(request):
+    return render(request, 'testimony/letters/registry/registry_of_letter.html')
 
 def list_of_letters(request):
     return render(request, 'testimony/letters/list_of_letters.html')

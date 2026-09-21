@@ -9,7 +9,7 @@ from django.urls import path
 
 from testimony.views import (
     homepage,
-    registry_of_letters,
+    registry_of_letter,
     registry_of_letters_deliveries,
     registry_of_territories,
     registry_of_peoples,
@@ -36,7 +36,7 @@ urlpatterns = [
     path('', homepage, name='homepage'),
 
     # Cartas
-    path('carta/registry/', registry_of_letters, name='registry_of_letters'),
+    path('carta/registry/', registry_of_letter, name='registry_of_letter'),
     path('carta/list/', list_of_letters, name='list_of_letters'),
 
     # Territórios
