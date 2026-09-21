@@ -69,11 +69,11 @@ def list_of_books(request):
     return render(request, 'testimony/books/list/list_of_books.html')
 
 # Leaflets
-def registry_of_leaflets(request):
-    return render(request, 'testimony/leaflets/registry_of_leaflets.html')
+def registry_of_leaflet(request):
+    return render(request, 'testimony/leaflets/registry/registry_of_leaflet.html')
 
 def list_of_leaflets(request):
-    return render(request, 'testimony/leaflets/list_of_leaflets.html')
+    return render(request, 'testimony/leaflets/list/list_of_leaflets.html')
 
 # Studies
 def registry_of_studies(request):

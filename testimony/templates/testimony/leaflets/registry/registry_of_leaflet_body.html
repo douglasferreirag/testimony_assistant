@@ -1,0 +1,39 @@
+<!-- Conteúdo principal -->
+ {% load static %}
+ 
+<main class="container mt-5">
+        <h2 class="mb-4">Cadastro de Folheto</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="ano" class="form-label">Ano</label>
+                    <input type="number" class="form-control" id="ano" name="ano" min="1900" max="2100" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="tamanho" class="form-label">Tamanho</label>
+                    <select class="form-select" id="tamanho" name="tamanho" required>
+                        <option value="" selected disabled>Selecione o tamanho</option>
+                        <option value="Grande">Grande</option>
+                        <option value="Pequeno">Pequeno</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="base" class="form-label">Base</label>
+                    <input type="text" class="form-control" id="base" name="base" placeholder="Digite a base" required>
+                </div>
+            </div>
+        </form>
+</main>
