@@ -47,11 +47,11 @@ def list_of_conversations(request):
 
 # Magazines
 
-def registry_of_magazines(request):
-    return render(request, 'testimony/magazines/registry_of_magazines.html')
+def registry_of_magazine(request):
+    return render(request, 'testimony/magazines/registry/registry_of_magazine.html')
 
 def list_of_magazines(request):
-    return render(request, 'testimony/magazines/list_of_magazines.html')
+    return render(request, 'testimony/magazines/list/list_of_magazines.html')
 
 # Videos
 
