@@ -31,8 +31,8 @@ def list_of_peoples(request):
 
 # Letters Deliveries
 
-def registry_of_letters_deliveries(request):
-    return render(request, 'testimony/letters_deliveries/registry_of_letters_deliveries.html')
+def registry_of_letter_delivery(request):
+    return render(request, 'testimony/letters_deliveries/registry/registry_of_letter_delivery.html')
 
 def list_of_letters_deliveries(request):
     return render(request, 'testimony/letters_deliveries/list_of_letters_deliveries.html')

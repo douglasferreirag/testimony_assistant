@@ -10,7 +10,7 @@ from django.urls import path
 from testimony.views import (
     homepage,
     registry_of_letter,
-    registry_of_letters_deliveries,
+    registry_of_letter_delivery,
     registry_of_territories,
     registry_of_peoples,
     list_of_peoples,
@@ -44,7 +44,7 @@ urlpatterns = [
     path('territorio/list/', list_of_territories, name='list_of_territories'),
 
     # Entregas
-    path('entrega/registry/', registry_of_letters_deliveries, name='registry_of_letters_deliveries'),
+    path('entrega/registry/', registry_of_letter_delivery, name='registry_of_letter_delivery'),
     path('entrega/list/', list_of_letters_deliveries, name='list_of_letters_deliveries'),
 
     # Pessoas
