@@ -35,7 +35,7 @@ def registry_of_letter_delivery(request):
     return render(request, 'testimony/letters_deliveries/registry/registry_of_letter_delivery.html')
 
 def list_of_letters_deliveries(request):
-    return render(request, 'testimony/letters_deliveries/list_of_letters_deliveries.html')
+    return render(request, 'testimony/letters_deliveries/list/list_of_letters_deliveries.html')
 
 # Conversations
 
