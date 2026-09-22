@@ -7,3 +7,4 @@ letters
 letterdelivery 
 magazines
 people
+territories

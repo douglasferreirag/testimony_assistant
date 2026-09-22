@@ -55,11 +55,11 @@ def list_of_magazines(request):
 
 # Videos
 
-def registry_of_videos(request):
-    return render(request, 'testimony/videos/registry_of_videos.html')
+def registry_of_video(request):
+    return render(request, 'testimony/videos/registry/registry_of_video.html')
 
 def list_of_videos(request):
-    return render(request, 'testimony/videos/list_of_videos.html')
+    return render(request, 'testimony/videos/list/list_of_videos.html')
 
 # Books
 def registry_of_book(request):
