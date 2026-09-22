@@ -15,11 +15,11 @@ def list_of_letters(request):
 
 # Territories
 
-def registry_of_territories(request):
-    return render(request, 'testimony/territories/registry_of_territories.html')
+def registry_of_territory(request):
+    return render(request, 'testimony/territories/registry/registry_of_territory.html')
 
 def list_of_territories(request):
-    return render(request, 'testimony/territories/list_of_territories.html')
+    return render(request, 'testimony/territories/list/list_of_territories.html')
 
 # Peoples
 

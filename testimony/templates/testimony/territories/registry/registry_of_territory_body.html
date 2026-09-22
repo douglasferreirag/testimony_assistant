@@ -1,0 +1,38 @@
+<!-- Conteúdo principal com grid -->
+
+{% load static %}
+
+<main class="container mt-5">
+        <h2 class="mb-4">Cadastro de Território</h2>
+        
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite a cidade" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="referencia" class="form-label">Ponto de Referência</label>
+                    <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Digite o ponto de referência" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="estado" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="estado" name="estado" placeholder="Digite o estado" required>
+                </div>
+            </div>
+        </form>
+</main>

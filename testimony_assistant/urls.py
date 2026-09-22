@@ -9,9 +9,10 @@ from django.urls import path
 
 from testimony.views import (
     homepage,
+    list_of_territories,
     registry_of_letter,
     registry_of_letter_delivery,
-    registry_of_territories,
+    registry_of_territory,
     registry_of_people,
     list_of_peoples,
     list_of_letters,
@@ -40,7 +41,7 @@ urlpatterns = [
     path('carta/list/', list_of_letters, name='list_of_letters'),
 
     # Territórios
-    path('territorio/registry/', registry_of_territories, name='registry_of_territories'),
+    path('territorio/registry/', registry_of_territory, name='registry_of_territory'),
     path('territorio/list/', list_of_territories, name='list_of_territories'),
 
     # Entregas
