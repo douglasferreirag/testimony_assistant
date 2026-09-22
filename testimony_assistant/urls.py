@@ -12,7 +12,7 @@ from testimony.views import (
     registry_of_letter,
     registry_of_letter_delivery,
     registry_of_territories,
-    registry_of_peoples,
+    registry_of_people,
     list_of_peoples,
     list_of_letters,
     list_of_territories,
@@ -48,7 +48,7 @@ urlpatterns = [
     path('entrega/list/', list_of_letters_deliveries, name='list_of_letters_deliveries'),
 
     # Pessoas
-    path('pessoa/registry/', registry_of_peoples, name='registry_of_peoples'),
+    path('pessoa/registry/', registry_of_people, name='registry_of_people'),
     path('pessoa/list/', list_of_peoples, name='list_of_peoples'),
 
     # Conversas

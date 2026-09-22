@@ -23,11 +23,11 @@ def list_of_territories(request):
 
 # Peoples
 
-def registry_of_peoples(request):
-    return render(request, 'testimony/peoples/registry_of_peoples.html')
+def registry_of_people(request):
+    return render(request, 'testimony/peoples/registry/registry_of_people.html')
 
 def list_of_peoples(request):
-    return render(request, 'testimony/peoples/list_of_peoples.html')
+    return render(request, 'testimony/peoples/list/list_of_peoples.html')
 
 # Letters Deliveries
 

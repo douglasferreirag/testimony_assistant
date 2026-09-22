@@ -1,0 +1,18 @@
+<!-- Conteúdo principal com grid -->
+ {% load static %}
+<main class="container mt-5">
+        <h2 class="mb-4">Cadastro de Pessoa</h2>
+        
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da pessoa" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="contato" class="form-label">Contato</label>
+                    <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite telefone ou e-mail" required>
+                </div>
+            </div>
+        </form>
+</main>
