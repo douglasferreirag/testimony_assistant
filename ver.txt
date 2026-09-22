@@ -6,3 +6,4 @@ leaflet
 letters
 letterdelivery 
 magazines
+people

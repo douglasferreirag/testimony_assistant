@@ -27,7 +27,7 @@ from testimony.views import (
     list_of_books,              # view para listagem de livros
     registry_of_leaflet,       # view para cadastro de folhetos
     list_of_leaflets,           # view para listagem de folhetos
-    registry_of_studies,        # view para cadastro de estudos
+    registry_of_study,        # view para cadastro de estudos
     list_of_studies,            # view para listagem de estudos
 )
 
@@ -72,6 +72,6 @@ urlpatterns = [
     path('leaflet/list/', list_of_leaflets, name='list_of_leaflets'),
 
     # Estudos (Studies)
-    path('study/registry/', registry_of_studies, name='registry_of_studies'),
+    path('study/registry/', registry_of_study, name='registry_of_study'),
     path('study/list/', list_of_studies, name='list_of_studies'),
 ]

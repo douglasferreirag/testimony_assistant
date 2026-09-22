@@ -1,0 +1,33 @@
+<!-- Conteúdo principal -->
+
+{% load static %}
+
+<main class="container mt-5">
+        <h2 class="mb-4">Cadastro de Estudo</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="conversa_id" class="form-label">ID da Conversa</label>
+                    <select class="form-select" id="conversa_id" name="conversa_id" required>
+                        <option value="" selected disabled>Selecione a conversa</option>
+                        <!-- opções de conversas virão do backend -->
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="publicacao_id" class="form-label">ID da Publicação</label>
+                    <select class="form-select" id="publicacao_id" name="publicacao_id" required>
+                        <option value="" selected disabled>Selecione a publicação</option>
+                        <!-- opções de publicações virão do backend -->
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="ondecontinuar" class="form-label">Onde Continuar</label>
+                    <input type="text" class="form-control" id="ondecontinuar" name="ondecontinuar" placeholder="Digite onde continuar" required>
+                </div>
+            </div>
+
+            
+        </form>
+</main>

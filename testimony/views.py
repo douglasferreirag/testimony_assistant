@@ -76,8 +76,8 @@ def list_of_leaflets(request):
     return render(request, 'testimony/leaflets/list/list_of_leaflets.html')
 
 # Studies
-def registry_of_studies(request):
-    return render(request, 'testimony/studies/registry_of_studies.html')
+def registry_of_study(request):
+    return render(request, 'testimony/studies/registry/registry_of_study.html')
 
 def list_of_studies(request):
-    return render(request, 'testimony/studies/list_of_studies.html')
+    return render(request, 'testimony/studies/list/list_of_studies.html')
