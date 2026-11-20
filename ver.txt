@@ -8,3 +8,17 @@ letterdelivery
 magazines
 people
 territories
+videos
+homepage 
+
+
+
+python manage.py makemigrations
+python manage.py check
+python manage.py makemigrations
+
+pip install pymysql
+
+
+
+

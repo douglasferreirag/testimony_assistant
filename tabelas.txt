@@ -1,11 +1,11 @@
-Cartas:
+1) Cartas:
 
     id (varchar (255))
     base
     descrição
 
 
-Territórios:
+2) Territórios:
 
     id (int ou bigint)
     descrição (varchar (255))
@@ -13,7 +13,7 @@ Territórios:
     ponto de referência (varchar (255))
     estado (varchar (255))
 
-Entrega de Cartas
+3) Entrega de Cartas
 
     id (int ou bigint)
     id da Cartas (varchar (255))
@@ -21,50 +21,162 @@ Entrega de Cartas
     data da Entrega (date)
     local (varchar (255))
 
-Pessoas
+4) Pessoas
 
     id (int ou bigint)
     nome (varchar (255))
     contato (varchar (255))
 
-Conversas 
+5) Conversas 
 
     id (int ou bigint) required
     id da Pessoas (int ou bigint)
     id do territorio (int ou bigint)
     data da Conversa date
 
-Revista
+6) Revista
 
     id (varchar 255 ) required
     descricacao (varchar 255 ) required
     ano int
 
-  Livro
+7)  Livro
 
     id (varchar 255 ) required
     descricacao (varchar 255 ) required
     ano int  
     Quantidade de capítulos int
 
-   Folhetos
+8)   Folhetos
 
     id
     descricao
     ano
     tamanho
 
-    Estudo
+9)     Estudo
 
     id bigint
     id da Conversa bigint
     id da publicação bigint
     ondecontinuar varchar (255)
 
+10) Video
 
-  Estudo
+    id
+    descricao
+    tempo
 
-    id 
-    id da Conversa 
-    id da publicação 
-    ondecontinuar 
+11) publicações
+
+    id
+    descricao
+    ano
+    
+
+
+ 
+
+Atualizado:
+
+Carta
+Plain Text
+Carta
+-----
+id VARCHAR(255) PK
+descricao VARCHAR(255) NOT NULL
+base VARCHAR(255) NOT NULL
+Território
+Plain Text
+Territorio
+----------
+id BIGSERIAL PK
+descricao VARCHAR(255) NOT NULL
+cidade VARCHAR(255) NOT NULL
+referencia VARCHAR(255) NOT NULL
+estado VARCHAR(255) NOT NULL
+Entrega de Carta
+Plain Text
+EntregaCarta
+------------
+id BIGSERIAL PK
+carta_id VARCHAR(255) FK -> Carta.id
+territorio_id BIGINT FK -> Territorio.id
+local VARCHAR(255) NOT NULL
+data_entrega DATE NOT NULL
+Pessoa
+Plain Text
+Pessoa
+------
+id BIGSERIAL PK
+nome VARCHAR(255) NOT NULL
+contato VARCHAR(255) NOT NULL
+Conversa
+Plain Text
+Conversa
+--------
+id BIGSERIAL PK
+pessoa_id BIGINT FK -> Pessoa.id
+territorio_id BIGINT FK -> Territorio.id
+data_conversa DATE NOT NULL
+Publicação (Classe Pai)
+
+Plain Text
+Publicacao
+----------
+id VARCHAR(255) PK
+descricao VARCHAR(255) NOT NULL
+ano INTEGER NOT NULL
+Livro (Herda de Publicação)
+
+Plain Text
+Livro
+-----
+publicacao_id VARCHAR(255) PK/FK -> Publicacao.id
+quantidade_capitulos INTEGER NOT NULL
+Revista (Herda de Publicação)
+Plain Text
+Revista
+-------
+publicacao_id VARCHAR(255) PK/FK -> Publicacao.id
+Folheto (Herda de Publicação)
+Plain Text
+Folheto
+-------
+publicacao_id VARCHAR(255) PK/FK -> Publicacao.id
+ 
+tamanho VARCHAR(20)
+ 
+Valores:
+- GRANDE
+- PEQUENO
+Vídeo (Herda de Publicação)
+Plain Text
+Video
+-----
+publicacao_id VARCHAR(255) PK/FK -> Publicacao.id
+ 
+tempo INTERVAL
+
+ou
+
+Plain Text
+tempo VARCHAR(8)
+
+caso queira armazenar:
+
+Plain Text
+01:25:40
+Estudo
+Plain Text
+Estudo
+------
+id BIGSERIAL PK
+ 
+conversa_id BIGINT
+FK -> Conversa.id
+ 
+publicacao_id VARCHAR(255)
+FK -> Publicacao.id
+ 
+onde_continuar VARCHAR(255) NOT NULL

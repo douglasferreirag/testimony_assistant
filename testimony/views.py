@@ -3,7 +3,7 @@ from django.shortcuts import render
 # from .models import Carta, Territorio, Pessoa, Entrega, Conversa, Revista, Video, Livro, Leaflet, Study
 
 def homepage(request):
-    return render(request, 'testimony/homepage.html')
+    return render(request, 'testimony/homepage/homepage.html')
 
 # Letters
 

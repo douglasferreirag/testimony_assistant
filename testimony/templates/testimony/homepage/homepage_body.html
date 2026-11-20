@@ -1,0 +1,173 @@
+ <!-- Conteúdo principal com cards -->
+
+{% load static %}
+
+<main class="container mt-5">
+        <h1 class="mb-4">Bem-vindo ao Testimony Assistant</h1>
+        <p class="mb-5">Organize seu ministério de forma eficiente.</p>
+
+        <div class="row">
+            <!-- Card Cartas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cartas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuCartas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuCartas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_letter' %}">Cadastrar Carta</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_letters' %}">Listar Cartas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Territórios -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Territórios</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuTerritorios">Acessar</button>
+                        <div class="collapse mt-3" id="submenuTerritorios">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_territory' %}">Cadastrar Território</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_territories' %}">Listar Territórios</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Entregas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Entregas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuEntregas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuEntregas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_letter_delivery' %}">Cadastrar Entrega</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_letters_deliveries' %}">Listar Entregas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Pessoas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pessoas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuPessoas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuPessoas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_people' %}">Cadastrar Pessoa</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_peoples' %}">Listar Pessoas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Conversas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Conversas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuConversas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuConversas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_conversation' %}">Cadastrar Conversa</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_conversations' %}">Listar Conversas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Revistas -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Revistas</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuRevistas">Acessar</button>
+                        <div class="collapse mt-3" id="submenuRevistas">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_magazine' %}">Cadastrar Revista</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_magazines' %}">Listar Revistas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Livros -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Livros</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuLivros">Acessar</button>
+                        <div class="collapse mt-3" id="submenuLivros">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_book' %}">Cadastrar Livro</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_books' %}">Listar Livros</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Vídeos -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm menu-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vídeos</h5>
+                        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuVideos">Acessar</button>
+                        <div class="collapse mt-3" id="submenuVideos">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{% url 'registry_of_video' %}">Cadastrar Vídeo</a></li>
+                                <li class="list-group-item"><a href="{% url 'list_of_videos' %}">Listar Vídeos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Folhetos -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm menu-card">
+                <div class="card-body">
+                    <h5 class="card-title">Folhetos</h5>
+                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuLeaflets" aria-expanded="false" aria-controls="submenuLeaflets">Acessar</button>
+                    <div class="collapse mt-3" id="submenuLeaflets">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="{% url 'registry_of_leaflet' %}">Cadastrar Folheto</a></li>
+                            <li class="list-group-item"><a href="{% url 'list_of_leaflets' %}">Listar Folhetos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Estudos -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm menu-card">
+                <div class="card-body">
+                    <h5 class="card-title">Estudos</h5>
+                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#submenuStudies" aria-expanded="false" aria-controls="submenuStudies">Acessar</button>
+                    <div class="collapse mt-3" id="submenuStudies">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="{% url 'registry_of_study' %}">Cadastrar Estudo</a></li>
+                            <li class="list-group-item"><a href="{% url 'list_of_studies' %}">Listar Estudos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+</main>
