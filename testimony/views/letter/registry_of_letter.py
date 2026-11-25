@@ -18,7 +18,8 @@ def registry_of_letter(request):
 
         messages.success(
             request,
-            "Carta cadastrada com sucesso!"
+            "Carta cadastrada com sucesso!",
+            extra_tags="letter"
         )
 
         return redirect("registry_of_letter")

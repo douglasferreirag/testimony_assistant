@@ -1,24 +1,84 @@
+<!-- Main content -->
+{% load static %}
+
 <main class="container mt-5">
     <h2 class="mb-4">Cadastro de Livro</h2>
-    
-    <form method="post">
+
+    <!-- Notifications -->
+    {% if messages %}
+        {% for message in messages %}
+
+            {% if 'book' in message.tags %}
+
+                <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" role="alert">
+
+                    {{ message }}
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+    {% endif %}
+
+    <form id="book-form" method="POST">
         {% csrf_token %}
+
         <div class="row mb-3">
             <div class="col-md-3">
                 <label for="id" class="form-label">ID</label>
-                <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="id"
+                    name="id"
+                    placeholder="Digite o ID"
+                    required
+                >
             </div>
+
             <div class="col-md-3">
-                <label for="descricao" class="form-label">Descrição</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
+                <label for="description" class="form-label">Descrição</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    placeholder="Digite a descrição"
+                    required
+                >
             </div>
+
             <div class="col-md-3">
-                <label for="ano" class="form-label">Ano</label>
-                <input type="number" class="form-control" id="ano" name="ano" min="1900" max="2100" required>
+                <label for="year" class="form-label">Ano</label>
+                <input
+                    type="number"
+                    class="form-control"
+                    id="year"
+                    name="year"
+                    min="1900"
+                    max="2100"
+                    required
+                >
             </div>
+
             <div class="col-md-3">
-                <label for="capitulos" class="form-label">Quantidade de Capítulos</label>
-                <input type="number" class="form-control" id="capitulos" name="capitulos" min="1" required>
+                <label for="chapter-quantity" class="form-label">Quantidade de Capítulos</label>
+                <input
+                    type="number"
+                    class="form-control"
+                    id="chapter-quantity"
+                    name="chapter_quantity"
+                    min="1"
+                    required
+                >
             </div>
         </div>
     </form>

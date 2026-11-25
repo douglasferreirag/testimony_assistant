@@ -1,15 +1,30 @@
-<!-- Conteúdo principal com grid -->
+<!-- Main content -->
 {% load static %}
 
 <main class="container mt-5">
     <h2 class="mb-4">Cadastro de Carta</h2>
 
+    <!-- Notifications -->
     {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
+
+            {% if 'letter' in message.tags %}
+
+                <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" role="alert">
+
+                    {{ message }}
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+            {% endif %}
+
         {% endfor %}
     {% endif %}
 
@@ -55,8 +70,6 @@
                 >
             </div>
         </div>
-
- 
 
     </form>
 </main>
