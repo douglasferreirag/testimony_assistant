@@ -14,10 +14,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registry_of_letter' %}">Cadastrar</a>
+                        <a
+                                class="nav-link"
+                                href="#"
+                                onclick="document.getElementById('letter-form').submit(); return false;">
+                                Cadastrar
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Limpar</a>
+                        <a 
+                                class="nav-link" 
+                                href="#" onclick="document.getElementById('letter-form').reset(); return false;">
+                                Limpar
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/">Página Inicial</a>

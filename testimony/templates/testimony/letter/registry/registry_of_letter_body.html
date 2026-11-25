@@ -2,25 +2,61 @@
 {% load static %}
 
 <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Carta</h2>
-        
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="id" class="form-label">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
-                </div>
+    <h2 class="mb-4">Cadastro de Carta</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form id="letter-form" method="POST">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="id" class="form-label">ID</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="id"
+                    name="id"
+                    placeholder="Digite o ID"
+                    required
+                >
             </div>
 
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="base" class="form-label">Base</label>
-                    <input type="text" class="form-control" id="base" name="base" placeholder="Digite a base" required>
-                </div>
+            <div class="col-md-6">
+                <label for="description" class="form-label">Descrição</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    placeholder="Digite a descrição"
+                    required
+                >
             </div>
-        </form>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="base" class="form-label">Base</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="base"
+                    name="base"
+                    placeholder="Digite a base"
+                    required
+                >
+            </div>
+        </div>
+
+ 
+
+    </form>
 </main>

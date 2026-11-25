@@ -1,12 +1,4 @@
-já arrumei as rotas
-
-letter
-territories
-letterdelivery
-person
-conversation
-magazine
-videos
+vi se está cadastrando
 
 
 

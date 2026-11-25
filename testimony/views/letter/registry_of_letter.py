@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 from testimony.models import Letter
 
@@ -15,7 +16,12 @@ def registry_of_letter(request):
 
         letter.save()
 
-        
+        messages.success(
+            request,
+            "Carta cadastrada com sucesso!"
+        )
+
+        return redirect("registry_of_letter")
 
     return render(
         request,
