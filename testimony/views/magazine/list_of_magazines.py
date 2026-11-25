@@ -11,7 +11,7 @@ def list_of_magazines(request):
 
     return render(
         request,
-        'testimony/list_of_magazines.html',
+        'testimony/magazine/list/list_of_magazines.html',
         {
             'magazines': magazines
         }

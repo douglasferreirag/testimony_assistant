@@ -33,5 +33,5 @@ def registry_of_video(request):
 
     return render(
         request,
-        'testimony/registry_of_video.html'
+        'testimony/video/registry/registry_of_video.html'
     )

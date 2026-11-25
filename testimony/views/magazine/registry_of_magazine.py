@@ -25,11 +25,9 @@ def registry_of_magazine(request):
 
         magazine.save()
 
-        return redirect(
-            'list_of_magazines'
-        )
+      
 
     return render(
         request,
-        'testimony/registry_of_magazine.html'
+        'testimony/magazine/registry/registry_of_magazine.html'
     )

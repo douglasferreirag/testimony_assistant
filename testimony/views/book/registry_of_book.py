@@ -18,9 +18,9 @@ def registry_of_book(request):
 
         book.save()
 
-        return redirect('registry_of_book')
+       
 
     return render(
         request,
-        'testimony/registry_of_book.html'
+        'testimony/book/registry/registry_of_book.html'
     )

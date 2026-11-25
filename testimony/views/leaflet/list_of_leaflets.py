@@ -11,7 +11,7 @@ def list_of_leaflets(request):
 
     return render(
         request,
-        'testimony/list_of_leaflets.html',
+        'testimony/leaflet/list/list_of_leaflets.html',
         {
             'leaflets': leaflets
         }

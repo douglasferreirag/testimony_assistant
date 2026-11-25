@@ -27,13 +27,11 @@ def registry_of_territory(request):
 
         territory.save()
 
-        return redirect(
-            'list_of_territories'
-        )
+     
 
     return render(
         request,
-        'testimony/registry_of_territory.html'
+        'testimony/territory/registry/registry_of_territory.html'
     )
 
     

@@ -27,11 +27,9 @@ def registry_of_leaflet(request):
 
         leaflet.save()
 
-        return redirect(
-            'list_of_leaflets'
-        )
+       
 
     return render(
         request,
-        'testimony/registry_of_leaflet.html'
+        'testimony/leaflet/registry/registry_of_leaflet.html'
     )

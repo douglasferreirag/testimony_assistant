@@ -6,6 +6,6 @@ from testimony.models import Letter
 def list_of_letters(request):
     letters = Letter.objects.all()
 
-    return render(request, 'letters/list_letters.html', {
+    return render(request, "testimony/letter/list/list_of_letters.html", {
         'letters': letters
     })

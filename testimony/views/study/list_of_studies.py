@@ -15,7 +15,7 @@ def list_of_studies(request):
 
     return render(
         request,
-        'testimony/list_of_studies.html',
+        'testimony/study/list/list_of_studies.html',
         {
             'studies': studies
         }

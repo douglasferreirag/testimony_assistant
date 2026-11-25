@@ -21,11 +21,9 @@ def registry_of_person(request):
 
         person.save()
 
-        return redirect(
-            'list_of_persons'
-        )
+   
 
     return render(
         request,
-        'testimony/registry_of_person.html'
+        'testimony/person/registry/registry_of_person.html'
     )

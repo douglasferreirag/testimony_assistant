@@ -15,9 +15,9 @@ def registry_of_letter(request):
 
         letter.save()
 
-        return redirect("list_of_letters")
+        
 
     return render(
         request,
-        "testimony/registry_of_letter.html"
+        "testimony/letter/registry/registry_of_letter.html"
     )

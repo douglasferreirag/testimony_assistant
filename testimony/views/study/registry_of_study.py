@@ -50,7 +50,7 @@ def registry_of_study(request):
 
     return render(
         request,
-        'testimony/registry_of_study.html',
+        'testimony/study/registry/registry_of_study.html',
         {
             'conversations': conversations,
             'publications': publications

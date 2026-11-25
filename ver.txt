@@ -1,15 +1,14 @@
-já componentizei
+já arrumei as rotas
 
-books 
-conversations 
-leaflet
-letters
-letterdelivery 
-magazines
-people
+letter
 territories
+letterdelivery
+person
+conversation
+magazine
 videos
-homepage 
+
+
 
 
 python manage.py runserver
@@ -21,44 +20,5 @@ python manage.py makemigrations
 pip install pymysql
 
 
-
-
-urls.py
-
-# Territórios
-    registry_of_territory,
-    list_of_territories,
-
-    # Entregas
-    registry_of_letter_delivery,
-    list_of_letters_deliveries,
-
-    # Pessoas
-    registry_of_people,
-    list_of_peoples,
-
-    # Conversas
-    registry_of_conversation,
-    list_of_conversations,
-
-    # Revistas
-    registry_of_magazine,
-    list_of_magazines,
-
-    # Vídeos
-    registry_of_video,
-    list_of_videos,
-
-    # Livros
-    registry_of_book,
-    list_of_books,
-
-    # Folhetos
-    registry_of_leaflet,
-    list_of_leaflets,
-
-    # Estudos
-    registry_of_study,
-    list_of_studies,
 
 

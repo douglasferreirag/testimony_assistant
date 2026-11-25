@@ -11,7 +11,7 @@ def list_of_persons(request):
 
     return render(
         request,
-        'testimony/list_of_persons.html',
+        'testimony/person/list/list_of_persons.html',
         {
             'persons': persons
         }

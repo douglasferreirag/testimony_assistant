@@ -39,17 +39,14 @@ def registry_of_letter_delivery(request):
 
         delivery.save()
 
-        return redirect(
-            'registry_of_delivery'
-        )
-
+       
     letters = Letter.objects.all()
 
     territories = Territory.objects.all()
 
     return render(
         request,
-        'testimony/registry_of_delivery.html',
+        'testimony/letter_delivery/registry/registry_of_letter_delivery.html',
         {
             'letters': letters,
             'territories': territories

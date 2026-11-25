@@ -15,7 +15,7 @@ def list_of_letters_deliveries(request):
 
     return render(
         request,
-        'testimony/list_of_letters_deliveries.html',
+        'testimony/letter_delivery/list/list_of_letters_deliveries.html',
         {
             'deliveries': deliveries
         }

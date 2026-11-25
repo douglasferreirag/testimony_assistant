@@ -10,7 +10,7 @@ def list_of_books(request):
 
     return render(
         request,
-        'testimony/list_of_books.html',
+        'testimony/book/list/list_of_books.html',
         {
             'books': books
         }

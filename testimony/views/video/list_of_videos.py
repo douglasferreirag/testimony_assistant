@@ -12,7 +12,7 @@ def list_of_videos(request):
 
     return render(
         request,
-        'video/list_of_videos.html',
+        'testimony/video/list/list_of_videos.html',
         {
             'videos': videos
         }

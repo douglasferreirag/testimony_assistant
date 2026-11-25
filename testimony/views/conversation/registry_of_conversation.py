@@ -29,17 +29,14 @@ def registry_of_conversation(request):
 
         conversation.save()
 
-        return redirect(
-            "registry_of_conversation"
-        )
-
+     
     persons = Person.objects.all()
 
     territories = Territory.objects.all()
 
     return render(
         request,
-        "testimony/registry_of_conversation.html",
+        "testimony/conversation/registry/registry_of_conversation.html",
         {
             "persons": persons,
             "territories": territories

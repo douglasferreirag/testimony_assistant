@@ -9,7 +9,7 @@ def list_of_conversations(request):
 
     return render(
         request,
-        'testimony/list_of_conversations.html',
+        "testimony/conversation/list/list_of_conversations.html",
         {
             'conversations': conversations
         }

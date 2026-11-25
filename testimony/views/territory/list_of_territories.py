@@ -12,7 +12,7 @@ def list_of_territories(request):
 
     return render(
         request,
-        'testimony/list_of_territories.html',
+        'testimony/territory/list/list_of_territories.html',
         {
             'territories': territories
         }
