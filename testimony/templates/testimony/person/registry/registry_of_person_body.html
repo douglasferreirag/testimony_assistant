@@ -1,18 +1,47 @@
-<!-- Conteúdo principal com grid -->
- {% load static %}
 <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Pessoa</h2>
-        
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da pessoa" required>
+    <h2 class="mb-4">Cadastro de Pessoa</h2>
+
+    <!-- Person messages -->
+    {% if messages %}
+        {% for message in messages %}
+            {% if 'person' in message.tags %}
+                <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <div class="col-md-6">
-                    <label for="contato" class="form-label">Contato</label>
-                    <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite telefone ou e-mail" required>
-                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <form id="person-form" method="POST">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Nome</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Digite o nome da pessoa"
+                    required
+                >
             </div>
-        </form>
+
+            <div class="col-md-6">
+                <label for="contact" class="form-label">Contato</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="contact"
+                    name="contact"
+                    placeholder="Digite telefone ou e-mail"
+                    required
+                >
+            </div>
+        </div>
+
+        
+    </form>
 </main>

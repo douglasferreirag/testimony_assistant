@@ -2,6 +2,9 @@ funcionando
 
 registry_of_letter
 list_of_letters
+registry_of_book
+list_of_books
+
 
 
 
