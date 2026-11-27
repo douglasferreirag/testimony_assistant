@@ -3,26 +3,26 @@ from django.db import models
 
 class Territory(models.Model):
 
-    descricao = models.CharField(
+    description = models.CharField(
         max_length=255
     )
 
-    cidade = models.CharField(
+    city = models.CharField(
         max_length=255
     )
 
-    referencia = models.CharField(
+    reference_point = models.CharField(
         max_length=255
     )
 
-    estado = models.CharField(
+    state = models.CharField(
         max_length=255
     )
 
     def __str__(self):
-        return self.descricao
+        return self.description
 
     class Meta:
-        db_table = 'territorio'
-        verbose_name = 'Território'
-        verbose_name_plural = 'Territórios'
+        db_table = 'territory'
+        verbose_name = 'Territory'
+        verbose_name_plural = 'Territories'

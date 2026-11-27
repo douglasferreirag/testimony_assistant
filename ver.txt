@@ -4,7 +4,10 @@ registry_of_letter
 list_of_letters
 registry_of_book
 list_of_books
-
+list_person
+registry_of_person 
+registry_of_territory
+list_of_territories
 
 
 
@@ -16,7 +19,6 @@ python manage.py check
 python manage.py makemigrations
 
 pip install pymysql
-
 
 
 

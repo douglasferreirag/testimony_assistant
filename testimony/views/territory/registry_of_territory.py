@@ -3,6 +3,8 @@ from django.shortcuts import (
     redirect
 )
 
+from django.contrib import messages
+
 from testimony.models import Territory
 
 
@@ -11,27 +13,34 @@ def registry_of_territory(request):
     if request.method == 'POST':
 
         territory = Territory(
-            descricao=request.POST.get(
-                'descricao'
-            ),
-            cidade=request.POST.get(
-                'cidade'
-            ),
-            referencia=request.POST.get(
-                'referencia'
-            ),
-            estado=request.POST.get(
-                'estado'
-            )
+            description=request.POST.get(
+                'description', ''
+            ).strip(),
+
+            city=request.POST.get(
+                'city', ''
+            ).strip(),
+
+            reference_point=request.POST.get(
+                'reference_point', ''
+            ).strip(),
+
+            state=request.POST.get(
+                'state', ''
+            ).strip()
         )
 
         territory.save()
 
-     
+        messages.success(
+            request,
+            'Território cadastrado com sucesso!',
+            extra_tags='territory'
+        )
+
+        return redirect('registry_of_territory')
 
     return render(
         request,
         'testimony/territory/registry/registry_of_territory.html'
     )
-
-    

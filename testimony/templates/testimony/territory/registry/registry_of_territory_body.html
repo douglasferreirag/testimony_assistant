@@ -1,38 +1,79 @@
-<!-- Conteúdo principal com grid -->
+<!-- Main content with grid -->
 
 {% load static %}
 
 <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Território</h2>
+    <h2 class="mb-4">Cadastro de Território</h2>
+
+    <!-- Territory messages -->
+    {% if messages %}
+        {% for message in messages %}
+            {% if 'territory' in message.tags %}
+                <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <form id="territory-form" method="POST">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+             <div class="col-md-6">
+                <label for="description" class="form-label">Descrição</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    placeholder="Digite a descrição"
+                    required
+                >
+            </div>
+
+            <div class="col-md-6">
+                <label for="city" class="form-label">Cidade</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="city"
+                    name="city"
+                    placeholder="Digite a cidade"
+                    required
+                >
+            </div>
+        </div>
+
+        <div class="row mb-3">
+           <div class="col-md-6">
+                <label for="reference_point" class="form-label">Ponto de Referência</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="reference_point"
+                    name="reference_point"
+                    placeholder="Digite o ponto de referência"
+                    required
+                >
+            </div>
+
+            <div class="col-md-6">
+                <label for="state" class="form-label">Estado</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="state"
+                    name="state"
+                    placeholder="Digite o estado"
+                    required
+                >
+            </div>
+        </div>
+
         
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="id" class="form-label">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Digite o ID" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" required>
-                </div>
-            </div>
 
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite a cidade" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="referencia" class="form-label">Ponto de Referência</label>
-                    <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Digite o ponto de referência" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="estado" class="form-label">Estado</label>
-                    <input type="text" class="form-control" id="estado" name="estado" placeholder="Digite o estado" required>
-                </div>
-            </div>
-        </form>
+        
+    </form>
 </main>

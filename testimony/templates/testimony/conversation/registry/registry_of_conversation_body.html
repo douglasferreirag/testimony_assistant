@@ -1,32 +1,68 @@
-<!-- Conteúdo principal -->
- {% load static %}
- 
+
+<!-- Main content -->
+{% load static %}
+
 <main class="container mt-5">
-        <h2 class="mb-4">Cadastro de Conversa</h2>
-        
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="id_pessoa" class="form-label">Id da Pessoa</label>
-                    <select class="form-select" id="id_pessoa" name="id_pessoa" required>
-                        <option selected disabled>Selecione a id da pessoa</option>
-                        <!-- opções dinâmicas depois -->
-                    </select>
+    <h2 class="mb-4">Cadastro de Conversa</h2>
+
+    <!-- Conversation messages -->
+    {% if messages %}
+        {% for message in messages %}
+            {% if 'conversation' in message.tags %}
+                <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <div class="col-md-6">
-                    <label for="id_territorio" class="form-label">Id do Território</label>
-                    <select class="form-select" id="id_territorio" name="id_territorio" required>
-                        <option selected disabled>Selecione a id do território</option>
-                        <!-- opções dinâmicas depois -->
-                    </select>
-                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <form id="conversation-form" method="POST">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="person_id" class="form-label">Id da Pessoa</label>
+                <select class="form-select" id="person_id" name="person_id" required>
+                    <option value="" selected disabled>Selecione a pessoa</option>
+
+                    {% for person in persons %}
+                        <option value="{{ person.id }}">
+                            {{ person.id }} - {{ person.name }}
+                        </option>
+                    {% endfor %}
+
+                </select>
             </div>
 
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="data_conversa" class="form-label">Data da Conversa</label>
-                    <input type="date" class="form-control" id="data_conversa" name="data_conversa" required>
-                </div>
+            <div class="col-md-6">
+                <label for="territory_id" class="form-label">Id do Território</label>
+                <select class="form-select" id="territory_id" name="territory_id" required>
+                    <option value="" selected disabled>Selecione o território</option>
+
+                    {% for territory in territories %}
+                        <option value="{{ territory.id }}">
+                            {{ territory.id }}
+                        </option>
+                    {% endfor %}
+
+                </select>
             </div>
-        </form>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="conversation_date" class="form-label">Data da Conversa</label>
+                <input
+                    type="date"
+                    class="form-control"
+                    id="conversation_date"
+                    name="conversation_date"
+                    required
+                >
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
 </main>

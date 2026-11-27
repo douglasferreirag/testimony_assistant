@@ -7,7 +7,7 @@ def list_of_territories(request):
 
     territories = (
         Territory.objects
-        .order_by('descricao')
+        .order_by('description')
     )
 
     return render(
